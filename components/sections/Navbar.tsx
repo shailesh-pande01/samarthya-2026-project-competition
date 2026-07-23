@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { navLinks, siteConfig } from "@/constants/data"
 import { Button } from "@/components/ui/button"
@@ -15,8 +16,8 @@ export function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="bg-primary w-10 h-10 border-brutal border-dark flex items-center justify-center font-heading font-black text-white text-xl group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:shadow-brutal transition-all">
-                S
+              <div className="w-12 h-12 relative border-2 border-dark group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:shadow-brutal transition-all overflow-hidden bg-white">
+                <Image src="/logo.jpeg" alt="Logo" fill className="object-contain" />
               </div>
               <span className="font-heading font-black text-xl uppercase tracking-tighter hidden sm:block">
                 {siteConfig.organizer}

@@ -11,9 +11,9 @@ export function Hero() {
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-16 overflow-hidden">
       {/* Neo Brutalist Background Elements */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-primary/10 border-brutal border-primary rounded-full animate-[spin_10s_linear_infinite]" />
-        <div className="absolute bottom-20 right-10 w-48 h-48 bg-accent border-brutal border-dark -rotate-12" />
-        <div className="absolute top-1/4 right-1/4 w-16 h-16 bg-primary border-brutal border-dark rotate-45" />
+        <div className="hidden md:block absolute top-10 left-10 w-32 h-32 bg-primary/10 border-brutal border-primary rounded-full animate-[spin_10s_linear_infinite]" />
+        <div className="hidden md:block absolute bottom-20 right-10 w-48 h-48 bg-accent border-brutal border-dark -rotate-12" />
+        <div className="hidden md:block absolute top-1/4 right-1/4 w-16 h-16 bg-primary border-brutal border-dark rotate-45" />
         {/* Dot pattern */}
         <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #111111 1px, transparent 0)', backgroundSize: '32px 32px', opacity: 0.05 }}></div>
       </div>

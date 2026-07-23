@@ -5,10 +5,10 @@ export function About() {
   return (
     <section id="about" className="py-20 bg-white relative">
       {/* Decorative corners */}
-      <div className="absolute top-0 left-0 w-16 h-16 border-t-brutal border-l-brutal border-dark" />
-      <div className="absolute top-0 right-0 w-16 h-16 border-t-brutal border-r-brutal border-dark" />
-      <div className="absolute bottom-0 left-0 w-16 h-16 border-b-brutal border-l-brutal border-dark" />
-      <div className="absolute bottom-0 right-0 w-16 h-16 border-b-brutal border-r-brutal border-dark" />
+      <div className="hidden md:block absolute top-0 left-0 w-16 h-16 border-t-brutal border-l-brutal border-dark" />
+      <div className="hidden md:block absolute top-0 right-0 w-16 h-16 border-t-brutal border-r-brutal border-dark" />
+      <div className="hidden md:block absolute bottom-0 left-0 w-16 h-16 border-b-brutal border-l-brutal border-dark" />
+      <div className="hidden md:block absolute bottom-0 right-0 w-16 h-16 border-b-brutal border-r-brutal border-dark" />
 
       <div className="container mx-auto px-4 relative z-10">
         <SectionTitle title={`About ${siteConfig.name}`} />

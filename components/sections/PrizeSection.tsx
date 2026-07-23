@@ -24,7 +24,7 @@ export function PrizeSection() {
 
   return (
     <section id="prizes" className="py-20 bg-bg relative">
-      <div className="absolute top-1/2 left-0 w-full h-1 bg-dark -z-0 opacity-10" />
+      <div className="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-dark -z-0 opacity-10" />
       
       <div className="container mx-auto px-4 relative z-10">
         <SectionTitle title={`Prize Pool ${prizes.pool}`} />

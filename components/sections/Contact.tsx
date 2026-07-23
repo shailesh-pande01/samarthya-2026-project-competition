@@ -7,7 +7,7 @@ import { Mail, Globe, MapPin } from "lucide-react"
 export function Contact() {
   return (
     <section id="contact" className="py-20 bg-bg relative overflow-hidden">
-      <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/10 rounded-full border-4 border-primary border-dashed animate-[spin_20s_linear_infinite] pointer-events-none" />
+      <div className="hidden md:block absolute -right-20 -bottom-20 w-64 h-64 bg-primary/10 rounded-full border-4 border-primary border-dashed animate-[spin_20s_linear_infinite] pointer-events-none" />
       
       <div className="container mx-auto px-4 relative z-10">
         <SectionTitle title="Contact Us" />

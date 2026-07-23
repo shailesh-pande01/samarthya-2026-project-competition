@@ -1,5 +1,6 @@
 import { siteConfig } from "@/constants/data"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -11,8 +12,8 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start space-y-4">
             <Link href="/" className="flex items-center gap-3 group">
-              <div className="bg-primary w-12 h-12 border-2 border-white flex items-center justify-center font-heading font-black text-white text-2xl group-hover:scale-110 transition-transform">
-                S
+              <div className="w-12 h-12 relative border-2 border-white group-hover:scale-110 transition-transform bg-white overflow-hidden">
+                <Image src="/logo.jpeg" alt="Logo" fill className="object-contain" />
               </div>
               <div>
                 <span className="font-heading font-black text-2xl uppercase tracking-tighter block leading-none">

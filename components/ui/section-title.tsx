@@ -14,8 +14,8 @@ export function SectionTitle({ title, subtitle, className, ...props }: SectionTi
           {title}
         </h2>
         {/* Decorative elements behind the title */}
-        <div className="absolute top-1/2 left-[-2rem] right-[-2rem] h-1 bg-dark -z-0" />
-        <div className="absolute top-0 bottom-0 left-[-1rem] right-[-1rem] border-y-brutal border-primary -z-0 pointer-events-none" />
+        <div className="hidden md:block absolute top-1/2 left-[-2rem] right-[-2rem] h-1 bg-dark -z-0" />
+        <div className="hidden md:block absolute top-0 bottom-0 left-[-1rem] right-[-1rem] border-y-brutal border-primary -z-0 pointer-events-none" />
       </div>
       {subtitle && (
         <p className="text-lg md:text-xl font-medium text-dark/80 max-w-2xl mt-6">
