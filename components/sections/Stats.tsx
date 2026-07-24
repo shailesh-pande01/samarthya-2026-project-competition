@@ -40,7 +40,7 @@ export function Stats() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: index * 0.1, type: "spring", stiffness: 300, damping: 24 }}
+              transition={{ duration: 0.5, delay: index * 0.1, type: "spring" as any, stiffness: 300, damping: 24 }}
               className="text-center bg-dark/10 p-6 border-2 border-white backdrop-blur-sm relative group hover:-translate-y-1 transition-transform"
             >
               {/* Dimension line accents */}

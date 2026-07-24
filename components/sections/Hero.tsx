@@ -53,7 +53,7 @@ export function Hero() {
               y: 0, 
               filter: "brightness(1)",
             }}
-            transition={{ duration: 0.8, type: "spring", stiffness: 200, damping: 20 }}
+            transition={{ duration: 0.8, type: "spring" as any, stiffness: 200, damping: 20 }}
           >
             <h1 className="text-6xl md:text-8xl font-heading font-black uppercase tracking-tighter mb-4 relative inline-block">
                {/* CAD Registration Marks */}
@@ -105,7 +105,7 @@ export function Hero() {
                 key={i}
                 variants={{
                   hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+                  visible: { opacity: 1, y: 0, transition: { type: "spring" as any, stiffness: 300, damping: 24 } }
                 }}
                 className="bg-white border-brutal border-dark p-4 flex items-center gap-4 shadow-brutal hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-brutal-sm transition-all group"
               >
@@ -125,7 +125,7 @@ export function Hero() {
             className="flex flex-col sm:flex-row gap-6 justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.8, type: "spring", stiffness: 400, damping: 28 }}
+            transition={{ duration: 0.5, delay: 0.8, type: "spring" as any, stiffness: 400, damping: 28 }}
           >
             <Button size="lg" asChild>
               <Link href={siteConfig.registrationLink}>

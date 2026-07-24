@@ -33,7 +33,7 @@ export function PrizeSection() {
 
   const cardVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 220, damping: 24 } }
+    visible: { opacity: 1, y: 0, transition: { type: "spring" as any, stiffness: 220, damping: 24 } }
   }
 
   return (
