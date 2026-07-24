@@ -7,16 +7,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap text-sm font-bold ring-offset-bg transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:translate-x-[4px] active:translate-y-[4px] active:shadow-none font-heading uppercase tracking-wider",
+  "inline-flex items-center justify-center whitespace-nowrap text-sm font-bold ring-offset-bg transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:translate-x-[var(--brutal-offset)] active:translate-y-[var(--brutal-offset)] active:shadow-none font-heading uppercase tracking-wider group/btn",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-light border-brutal border-dark shadow-brutal hover:-translate-y-1 hover:-translate-x-1 hover:shadow-brutal-lg",
+          "bg-primary text-light border-brutal border-dark shadow-brutal hover:translate-y-[calc(var(--brutal-offset)/4)] hover:translate-x-[calc(var(--brutal-offset)/4)] hover:shadow-brutal",
         outline:
-          "border-brutal border-dark bg-bg hover:bg-accent text-dark shadow-brutal hover:-translate-y-1 hover:-translate-x-1 hover:shadow-brutal-lg",
+          "border-brutal border-dark bg-bg hover:bg-accent text-dark shadow-brutal hover:translate-y-[calc(var(--brutal-offset)/4)] hover:translate-x-[calc(var(--brutal-offset)/4)] hover:shadow-brutal-sm",
         secondary:
-          "bg-dark text-light border-brutal border-dark shadow-brutal hover:-translate-y-1 hover:-translate-x-1 hover:shadow-brutal-lg",
+          "bg-dark text-light border-brutal border-dark shadow-brutal hover:translate-y-[calc(var(--brutal-offset)/4)] hover:translate-x-[calc(var(--brutal-offset)/4)] hover:shadow-brutal-sm",
         ghost: "hover:bg-accent hover:text-dark",
         link: "text-primary underline-offset-4 hover:underline",
       },

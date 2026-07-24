@@ -10,14 +10,26 @@
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-heading: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-brutal: 8px 8px 0px 0px #111111;
-  --shadow-brutal-sm: 4px 4px 0px 0px #111111;
-  --shadow-brutal-lg: 12px 12px 0px 0px #111111;
+  /* Refined Shadow System */
+  --shadow-brutal: var(--brutal-offset) var(--brutal-offset) 0px 0px var(--color-dark);
+  --shadow-brutal-sm: calc(var(--brutal-offset) / 2) calc(var(--brutal-offset) / 2) 0px 0px var(--color-dark);
+  --shadow-brutal-lg: calc(var(--brutal-offset) * 1.5) calc(var(--brutal-offset) * 1.5) 0px 0px var(--color-dark);
+  /* Double shadow: black offset + red offset */
+  --shadow-brutal-accent: var(--brutal-offset) var(--brutal-offset) 0px 0px var(--color-dark), calc(var(--brutal-offset) * 2) calc(var(--brutal-offset) * 2) 0px 0px var(--color-primary);
 
   --border-width-brutal: 4px;
 }
 
 @layer base {
+  :root {
+    --brutal-offset: 4px; /* Mobile base offset */
+  }
+  @media (min-width: 768px) {
+    :root {
+      --brutal-offset: 8px; /* Desktop base offset */
+    }
+  }
+
   * {
     border-color: var(--color-dark);
   }
@@ -31,5 +43,13 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .bg-blueprint {
+    background-image: linear-gradient(var(--color-dark) 1px, transparent 1px),
+      linear-gradient(90deg, var(--color-dark) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 }

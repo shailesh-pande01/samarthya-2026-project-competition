@@ -9,77 +9,123 @@ import Link from "next/link"
 export function Hero() {
   return (
     <section id="home" className="relative min-h-[90vh] flex items-center justify-center pt-20 pb-16 overflow-hidden">
-      {/* Neo Brutalist Background Elements */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        <div className="hidden md:block absolute top-10 left-10 w-32 h-32 bg-primary/10 border-brutal border-primary rounded-full animate-[spin_10s_linear_infinite]" />
-        <div className="hidden md:block absolute bottom-20 right-10 w-48 h-48 bg-accent border-brutal border-dark -rotate-12" />
-        <div className="hidden md:block absolute top-1/4 right-1/4 w-16 h-16 bg-primary border-brutal border-dark rotate-45" />
-        {/* Dot pattern */}
-        <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, #111111 1px, transparent 0)', backgroundSize: '32px 32px', opacity: 0.05 }}></div>
+      {/* Power-on Schematic Background */}
+      <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center overflow-hidden">
+        <motion.svg
+          className="absolute w-full h-full"
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Top left circuit trace */}
+          <motion.path
+            d="M -100 200 L 200 200 L 250 150 L 800 150"
+            stroke="var(--color-primary)"
+            strokeWidth="2"
+            fill="transparent"
+            variants={{
+              hidden: { pathLength: 0, opacity: 0 },
+              visible: { pathLength: 1, opacity: 0.3, transition: { duration: 1.5, ease: "easeInOut" } }
+            }}
+          />
+          {/* Bottom right circuit trace */}
+          <motion.path
+            d="M 110vw 80vh L 80vw 80vh L 75vw 85vh L 30vw 85vh"
+            stroke="var(--color-dark)"
+            strokeWidth="2"
+            fill="transparent"
+            variants={{
+              hidden: { pathLength: 0, opacity: 0 },
+              visible: { pathLength: 1, opacity: 0.2, transition: { duration: 1.5, delay: 0.5, ease: "easeInOut" } }
+            }}
+          />
+        </motion.svg>
+        {/* Blueprint Grid */}
+        <div className="absolute inset-0 bg-blueprint opacity-[0.03]"></div>
       </div>
 
-      <div className="container mx-auto px-4 z-10">
+      <div className="container mx-auto px-4 z-10 relative">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Main Title with Power-on sequence */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, y: 30, filter: "brightness(2)" }}
+            animate={{ 
+              opacity: 1, 
+              y: 0, 
+              filter: "brightness(1)",
+            }}
+            transition={{ duration: 0.8, type: "spring", stiffness: 200, damping: 20 }}
           >
-            <h1 className="text-6xl md:text-8xl font-heading font-black uppercase tracking-tighter mb-4">
-              <span className="inline-block hover:-translate-y-2 hover:-translate-x-2 transition-transform cursor-default">
+            <h1 className="text-6xl md:text-8xl font-heading font-black uppercase tracking-tighter mb-4 relative inline-block">
+               {/* CAD Registration Marks */}
+               <div className="absolute -top-4 -left-4 w-6 h-6 border-t-[3px] border-l-[3px] border-dark z-20 opacity-50" />
+               <div className="absolute -top-4 -right-4 w-6 h-6 border-t-[3px] border-r-[3px] border-dark z-20 opacity-50" />
+               <div className="absolute -bottom-4 -left-4 w-6 h-6 border-b-[3px] border-l-[3px] border-dark z-20 opacity-50" />
+               <div className="absolute -bottom-4 -right-4 w-6 h-6 border-b-[3px] border-r-[3px] border-dark z-20 opacity-50" />
+              
+              <span className="inline-block hover:-translate-y-1 hover:-translate-x-1 transition-transform cursor-default relative z-10">
                 Samarthya
               </span>
               <br />
-              <span className="text-primary inline-block hover:-translate-y-2 hover:-translate-x-2 transition-transform cursor-default">
+              <span className="text-primary inline-block hover:-translate-y-1 hover:-translate-x-1 transition-transform cursor-default relative z-10">
                 2026
               </span>
             </h1>
-            <p className="text-xl md:text-3xl font-bold font-heading mb-8 border-y-brutal border-dark py-4 bg-white inline-block px-8 shadow-brutal-sm uppercase">
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, boxShadow: "0px 0px 40px 10px rgba(225,6,0,0)" }}
+            animate={{ 
+              opacity: 1, 
+              scale: 1,
+              boxShadow: ["0px 0px 40px 10px rgba(225,6,0,0.5)", "0px 0px 0px 0px rgba(225,6,0,0)"]
+            }}
+            transition={{ duration: 1.2, delay: 0.3 }}
+            className="mb-12 inline-block relative"
+          >
+            <p className="text-xl md:text-3xl font-bold font-heading border-brutal border-dark py-4 bg-white px-8 shadow-brutal uppercase">
               {siteConfig.tagline}
             </p>
           </motion.div>
 
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.1, delayChildren: 0.6 } }
+            }}
           >
-            <div className="bg-white border-brutal border-dark p-4 flex items-center gap-4 shadow-brutal hover:-translate-y-1 hover:-translate-x-1 transition-transform group">
-              <div className="bg-primary p-3 border-2 border-dark text-white group-hover:scale-110 transition-transform">
-                <MonitorSmartphone size={24} />
-              </div>
-              <div className="text-left">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary">Competition Mode</p>
-                <p className="font-heading font-bold text-lg">{siteConfig.mode}</p>
-                <p className="text-sm font-medium">Online + Offline</p>
-              </div>
-            </div>
-            <div className="bg-white border-brutal border-dark p-4 flex items-center gap-4 shadow-brutal hover:-translate-y-1 hover:-translate-x-1 transition-transform group">
-              <div className="bg-primary p-3 border-2 border-dark text-white group-hover:scale-110 transition-transform">
-                <Calendar size={24} />
-              </div>
-              <div className="text-left">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary">Date</p>
-                <p className="font-heading font-bold text-lg">{siteConfig.date}</p>
-              </div>
-            </div>
-            <div className="bg-white border-brutal border-dark p-4 flex items-center gap-4 shadow-brutal hover:-translate-y-1 hover:-translate-x-1 transition-transform group">
-              <div className="bg-primary p-3 border-2 border-dark text-white group-hover:scale-110 transition-transform">
-                <MapPin size={24} />
-              </div>
-              <div className="text-left">
-                <p className="text-xs font-bold uppercase tracking-widest text-primary">Venue</p>
-                <p className="font-heading font-bold text-lg">{siteConfig.venue}</p>
-              </div>
-            </div>
+            {[
+              { icon: MonitorSmartphone, title: "Competition Mode", value: siteConfig.mode, sub: "Online + Offline" },
+              { icon: Calendar, title: "Date", value: siteConfig.date },
+              { icon: MapPin, title: "Venue", value: siteConfig.venue }
+            ].map((item, i) => (
+              <motion.div 
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 300, damping: 24 } }
+                }}
+                className="bg-white border-brutal border-dark p-4 flex items-center gap-4 shadow-brutal hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-brutal-sm transition-all group"
+              >
+                <div className="bg-primary p-3 border-2 border-dark text-white group-hover:scale-110 transition-transform">
+                  <item.icon size={24} />
+                </div>
+                <div className="text-left">
+                  <p className="text-xs font-bold uppercase tracking-widest text-primary">{item.title}</p>
+                  <p className="font-heading font-bold text-lg tabular-nums tracking-tight">{item.value}</p>
+                  {item.sub && <p className="text-sm font-medium">{item.sub}</p>}
+                </div>
+              </motion.div>
+            ))}
           </motion.div>
 
           <motion.div 
             className="flex flex-col sm:flex-row gap-6 justify-center"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            transition={{ duration: 0.5, delay: 0.8, type: "spring", stiffness: 400, damping: 28 }}
           >
             <Button size="lg" asChild>
               <Link href={siteConfig.registrationLink}>

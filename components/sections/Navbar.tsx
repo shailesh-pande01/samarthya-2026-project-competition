@@ -15,22 +15,22 @@ export function Navbar() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-12 h-12 relative border-2 border-dark group-hover:-translate-y-1 group-hover:-translate-x-1 group-hover:shadow-brutal transition-all overflow-hidden bg-white">
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="w-12 h-12 relative border-[3px] border-dark shadow-brutal-sm group-hover:translate-y-[calc(var(--brutal-offset)/4)] group-hover:translate-x-[calc(var(--brutal-offset)/4)] group-hover:shadow-none transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] overflow-hidden bg-white">
                 <Image src="/logo.jpeg" alt="Logo" fill className="object-contain" />
               </div>
-              <span className="font-heading font-black text-xl uppercase tracking-tighter hidden sm:block">
+              <span className="font-heading font-black text-2xl uppercase tracking-tighter hidden sm:block group-hover:text-primary transition-colors duration-300">
                 {siteConfig.organizer}
               </span>
             </Link>
           </div>
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-6">
+            <div className="ml-10 flex items-center space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="font-bold text-dark hover:text-primary hover:-translate-y-0.5 transition-transform font-sans"
+                  className="font-bold text-dark hover:text-primary hover:-translate-y-1 transition-all duration-300 font-sans tracking-wide relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
                 >
                   {link.label}
                 </Link>
