@@ -107,7 +107,7 @@ export function Hero() {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { type: "spring" as any, stiffness: 300, damping: 24 } }
                 }}
-                className="bg-white border-brutal border-dark p-4 flex items-center gap-4 shadow-brutal hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-brutal-sm transition-all group"
+                className="bg-white border-brutal border-dark p-4 flex items-center gap-4 shadow-brutal hover:translate-y-[calc(var(--brutal-offset)/4)] hover:translate-x-[calc(var(--brutal-offset)/4)] hover:shadow-brutal-sm transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group"
               >
                 <div className="bg-primary p-3 border-2 border-dark text-white group-hover:scale-110 transition-transform">
                   <item.icon size={24} />

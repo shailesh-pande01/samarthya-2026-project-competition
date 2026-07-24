@@ -30,7 +30,7 @@ export function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="font-bold text-dark hover:text-primary hover:-translate-y-1 transition-all duration-300 font-sans tracking-wide relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
+                  className="font-bold text-dark hover:text-primary hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 focus-visible:text-primary transition-all duration-300 font-sans tracking-wide relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
                 >
                   {link.label}
                 </Link>
@@ -44,7 +44,7 @@ export function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="inline-flex items-center justify-center p-2 border-brutal border-dark bg-bg hover:bg-accent focus:outline-none"
+              className="inline-flex items-center justify-center p-2 border-brutal border-dark bg-bg hover:bg-accent active:bg-accent/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 transition-colors duration-300"
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
@@ -66,7 +66,7 @@ export function Navbar() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="block px-3 py-2 font-bold text-dark hover:bg-accent border-l-brutal border-transparent hover:border-primary transition-all"
+                className="block px-3 py-2 font-bold text-dark hover:bg-accent active:bg-accent/80 border-l-brutal border-transparent hover:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-inset transition-all duration-300"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}

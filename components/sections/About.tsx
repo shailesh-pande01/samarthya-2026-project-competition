@@ -40,7 +40,7 @@ export function About() {
         
         <div className="max-w-4xl mx-auto">
           <motion.div 
-            className="bg-bg border-brutal border-dark p-8 md:p-12 shadow-brutal-accent relative"
+            className="bg-bg border-brutal border-dark p-8 md:p-12 shadow-brutal relative"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

@@ -9,19 +9,47 @@ import { motion, AnimatePresence } from "framer-motion"
 export function FAQ() {
   const [openIndex, setOpenIndex] = React.useState<number | null>(0)
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1, 
+      transition: { staggerChildren: 0.1 } 
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { type: "spring" as any, stiffness: 300, damping: 24 } }
+  }
+
   return (
-    <section id="faqs" className="py-20 bg-white border-y-brutal border-dark">
-      <div className="container mx-auto px-4">
-        <SectionTitle title="Frequently Asked Questions" />
+    <section id="faqs" className="py-24 md:py-32 bg-white border-y-[var(--border-width-brutal)] border-dark relative overflow-hidden">
+      <div className="absolute inset-0 bg-blueprint opacity-[0.04] pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <SectionTitle title="Frequently Asked Questions" />
+        </motion.div>
         
-        <div className="max-w-3xl mx-auto mt-12 space-y-4">
+        <motion.div 
+          className="max-w-3xl mx-auto mt-12 space-y-4"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
           {faqs.map((faq, index) => (
-            <div 
+            <motion.div 
+              variants={itemVariants}
               key={index} 
               className="bg-bg border-brutal border-dark shadow-brutal-sm overflow-hidden"
             >
               <button
-                className="w-full px-6 py-4 flex items-center justify-between text-left focus:outline-none hover:bg-accent transition-colors"
+                className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-accent active:bg-accent/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 transition-colors duration-300"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
               >
                 <span className="font-heading font-bold text-lg">{faq.question}</span>
@@ -45,9 +73,9 @@ export function FAQ() {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   )

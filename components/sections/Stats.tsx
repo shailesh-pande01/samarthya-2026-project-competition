@@ -28,7 +28,7 @@ function Counter({ from, to, duration = 2 }: { from: number; to: number; duratio
 
 export function Stats() {
   return (
-    <section className="py-20 bg-primary text-white border-y-brutal border-dark relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-primary text-white border-y-[var(--border-width-brutal)] border-dark relative overflow-hidden">
       {/* Blueprint background but with white grid for red bg */}
       <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
       
@@ -41,7 +41,7 @@ export function Stats() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1, type: "spring" as any, stiffness: 300, damping: 24 }}
-              className="text-center bg-dark/10 p-6 border-2 border-white backdrop-blur-sm relative group hover:-translate-y-1 transition-transform"
+              className="text-center bg-dark/10 p-6 border-[3px] border-white backdrop-blur-sm relative group hover:translate-y-[calc(var(--brutal-offset)/4)] transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
             >
               {/* Dimension line accents */}
               <div className="absolute top-1/2 -left-2 w-4 h-[2px] bg-white hidden md:block" />

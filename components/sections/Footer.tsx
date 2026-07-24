@@ -34,10 +34,10 @@ export function Footer() {
               Made with <span className="text-primary animate-pulse inline-block">❤️</span> by SKN IEEE Web Team
             </p>
             <div className="flex space-x-8 text-sm font-bold text-white/80 uppercase tracking-widest">
-              <a href={siteConfig.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:-translate-y-1 transition-all duration-300 relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300">
+              <a href={siteConfig.website} target="_blank" rel="noopener noreferrer" className="hover:text-primary hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-dark transition-all duration-300 relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300">
                 Website
               </a>
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-primary hover:-translate-y-1 transition-all duration-300 relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300">
+              <a href={`mailto:${siteConfig.email}`} className="hover:text-primary hover:-translate-y-1 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-dark transition-all duration-300 relative after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-primary after:scale-x-0 after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300">
                 Contact Us
               </a>
             </div>

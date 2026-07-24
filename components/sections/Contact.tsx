@@ -47,7 +47,7 @@ export function Contact() {
           <motion.div variants={childVariants} className="bg-white border-[3px] border-dark p-8 md:p-10 shadow-brutal hover:translate-y-[calc(var(--brutal-offset)/4)] hover:translate-x-[calc(var(--brutal-offset)/4)] hover:shadow-brutal transition-all duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] group/card relative">
             
             {/* Circuit line accent */}
-            <div className="absolute top-0 right-10 w-1 h-12 bg-dark group-hover/card:h-16 transition-all duration-300 ease-out" />
+            <div className="absolute top-0 right-10 w-1 h-16 bg-dark origin-top scale-y-75 group-hover/card:scale-y-100 transition-transform duration-300 ease-out" />
 
             <h3 className="font-heading font-black text-2xl uppercase mb-8 border-b-[3px] border-dark pb-4 tracking-wider">Get in Touch</h3>
             
@@ -102,10 +102,10 @@ export function Contact() {
             <div className="relative z-10">
               <p className="font-bold uppercase tracking-widest mb-4 border-b-[3px] border-dark/20 pb-2">Follow Us</p>
               <div className="flex gap-4">
-                <a href="#" className="bg-white text-dark px-6 py-3 border-[2px] border-dark hover:-translate-y-1 hover:shadow-brutal hover:bg-dark hover:text-white font-black uppercase tracking-wider transition-all duration-300">
+                <a href="#" className="bg-white text-dark px-6 py-3 border-[2px] border-dark hover:-translate-y-1 hover:shadow-brutal hover:bg-dark hover:text-white active:translate-y-0 active:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 font-black uppercase tracking-wider transition-all duration-300">
                   IG
                 </a>
-                <a href="#" className="bg-white text-dark px-6 py-3 border-[2px] border-dark hover:-translate-y-1 hover:shadow-brutal hover:bg-dark hover:text-white font-black uppercase tracking-wider transition-all duration-300">
+                <a href="#" className="bg-white text-dark px-6 py-3 border-[2px] border-dark hover:-translate-y-1 hover:shadow-brutal hover:bg-dark hover:text-white active:translate-y-0 active:shadow-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-dark focus-visible:ring-offset-2 font-black uppercase tracking-wider transition-all duration-300">
                   IN
                 </a>
               </div>
