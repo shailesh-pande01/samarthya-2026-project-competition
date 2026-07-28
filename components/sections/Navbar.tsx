@@ -6,9 +6,24 @@ import Image from "next/image"
 import { Menu, X } from "lucide-react"
 import { navLinks, siteConfig } from "@/constants/data"
 import { Button } from "@/components/ui/button"
+import { getResultsPublishStatus } from "@/app/samarthya-admin-portal-2026-auth/actions"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
+  const [showResultsLink, setShowResultsLink] = React.useState(false)
+
+  React.useEffect(() => {
+    getResultsPublishStatus()
+      .then(setShowResultsLink)
+      .catch((err) => console.error("Failed to load results toggle status:", err))
+  }, [])
+
+  const activeNavLinks = React.useMemo(() => {
+    if (showResultsLink) {
+      return [...navLinks, { label: "Results", href: "/winners" }];
+    }
+    return navLinks;
+  }, [showResultsLink])
 
   return (
     <header className="sticky top-0 z-50 w-full border-b-brutal border-dark bg-white shadow-brutal-sm">
@@ -26,7 +41,7 @@ export function Navbar() {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-center space-x-8">
-              {navLinks.map((link) => (
+              {activeNavLinks.map((link) => (
                 <Link
                   key={link.label}
                   href={link.href}
@@ -62,7 +77,7 @@ export function Navbar() {
       {isOpen && (
         <div className="md:hidden border-t-brutal border-dark bg-white absolute w-full left-0 shadow-brutal-lg" id="mobile-menu">
           <div className="space-y-1 px-4 pb-3 pt-2 sm:px-3 flex flex-col">
-            {navLinks.map((link) => (
+            {activeNavLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}

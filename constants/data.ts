@@ -6,8 +6,17 @@ export const siteConfig = {
   venue: "SKNCOE, Pune",
   date: "12 August 2026",
   website: "https://www.sknisb.in",
+  // email: "riteshdone0@gmail.com",
   email: "ieee.sb_skncoe@sinhgad.edu",
   registrationLink: "#",
+  brochureLink: "/brochure.pdf",
+  whatsappLink: "https://wa.me/918830250297?text=Hello%20Samarthya%202026%20Team%2C%20I%20have%20a%20query%20regarding%20the%20project%20competition.",
+  mailtoLink: "mailto:ieee.sb_skncoe@sinhgad.edu?subject=Query%20regarding%20Samarthya%202026&body=Hello%20Team%2C%0D%0A%0D%0AI%20would%20like%20to%20inquire%20about%20Samarthya%202026.%0D%0A%0D%0ARegards%2C",
+  socials: {
+    instagram: "http://instagram.com/skn_ieee/",
+    linkedin: "https://www.linkedin.com/company/skn-ieee-student-branch",
+    youtube: "https://www.youtube.com/@sknisb",
+  }
 };
 
 export const stats = [

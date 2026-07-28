@@ -133,7 +133,7 @@ export function Hero() {
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="#" onClick={(e) => e.preventDefault()}>
+              <a href={siteConfig.brochureLink} download="Samarthya-2026-Brochure.pdf">
                 Download Brochure
               </a>
             </Button>
